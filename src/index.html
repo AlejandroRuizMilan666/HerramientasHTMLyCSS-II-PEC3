@@ -1,36 +1,54 @@
 <!doctype html>
 
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
-    <!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.css" />
+    <title>Inicio — Jornadas de Artesanía 2026 · PEC3</title>
   </head>
-  <body>
-    <div class="uoc-container">
-      <picture>
-        <source
-          srcset="./assets/images/logo.png?as=webp&width=350"
-          type="image/webp"
-        />
-        <img
-          src="./assets/images/logo.png?width=350"
-          alt="Universitat Oberta de Catalunya"
-          class="uoc-logo"
-        />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
-    </div>
+  <body class="bg-light font-sans min-h-screen flex flex-col">
+    <include src="./views/header.html"></include>
+
+    <main class="flex-1 flex items-center justify-center py-16 px-4">
+      <div class="max-w-lg w-full text-center">
+        <h1 class="font-serif text-4xl font-black text-dark mb-3">
+          Jornadas de Artesanía 2026
+        </h1>
+        <p class="text-dark/60 mb-10">
+          PEC3 · Tailwind CSS
+        </p>
+
+        <ul class="space-y-3 text-left">
+          <li>
+            <a href="./ponentes.html" class="flex items-center justify-between bg-white px-5 py-4 rounded-lg shadow-sm border border-accent/20 hover:border-accent transition-colors group">
+              <span class="font-semibold text-dark group-hover:text-primary transition-colors">Ponentes</span>
+              <span class="text-accent">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="./articulo.html" class="flex items-center justify-between bg-white px-5 py-4 rounded-lg shadow-sm border border-accent/20 hover:border-accent transition-colors group">
+              <span class="font-semibold text-dark group-hover:text-primary transition-colors">Sobre las jornadas</span>
+              <span class="text-accent">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="./contestants.html" class="flex items-center justify-between bg-white px-5 py-4 rounded-lg shadow-sm border border-accent/20 hover:border-accent transition-colors group">
+              <span class="font-semibold text-dark group-hover:text-primary transition-colors">Contestants</span>
+              <span class="text-accent">→</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </main>
+
     <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>
-    <!-- do not remove this line! -->
   </body>
 </html>

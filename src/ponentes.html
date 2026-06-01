@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="./assets/images/logo.png" />
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.css" />
+    <title>Ponentes — Jornadas de Artesanía 2026</title>
+  </head>
+  <body class="bg-light font-sans">
+    <include src="./views/header.html"></include>
+
+    <main>
+
+      <section
+        class="bg-gradient-to-br from-dark to-primary/80 py-16 sm:py-24 text-center"
+        aria-labelledby="ponentes-title"
+      >
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+          <p class="text-xs font-bold uppercase tracking-widest text-accent mb-4">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+            Jornadas de Artesanía 2026
+          </p>
+          <h1
+            id="ponentes-title"
+            class="font-serif text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-5"
+          >
+            Ponentes
+          </h1>
+          <p class="text-base sm:text-lg text-light/80 leading-relaxed max-w-2xl mx-auto">
+            Descubre a los artesanos y artesanas que compartirán su conocimiento
+            y pasión en las jornadas. Expertos de todo el territorio con décadas
+            de experiencia en sus disciplinas.
+          </p>
+        </div>
+      </section>
+
+      <include src="./views/speakers-section.html"></include>
+
+    </main>
+
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+  </body>
+</html>

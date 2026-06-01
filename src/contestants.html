@@ -1,0 +1,190 @@
+<!doctype html>
+
+<!--
+  ═══════════════════════════════════════════════════════════
+  contestants.html — Cooking Contest 2024 Edition
+  ─────────────────────────────────────────────────────────
+  GENERATED WITH AI — GitHub Copilot (Claude Sonnet 4.6)
+  Based on the design reference image provided for PEC3.
+
+  Prompt sequence used:
+    1. "Based on this design image, generate the full HTML
+       and Tailwind CSS for the Contestants page of a
+       cooking contest website. Use Tailwind v3 utility
+       classes only, no custom CSS. Match the layout,
+       typography scale, and colour palette visible in
+       the image."
+    2. "Add the recipe cards section using a 3-column grid.
+       Each card has a title, a circular avatar with initials,
+       author name, and short description."
+    3. "Add a multi-column footer that matches the image:
+       brand name top-left, social icons bottom-left,
+       and three link columns (Recipes / Contestants /
+       Contest editions)."
+    4. "Integrate the recipe cards as a posthtml-include
+       component (src/views/recipe-cards.html) and use
+       the shared main.css stylesheet."
+
+  AI analysis:
+    • The AI correctly identified the minimal, clean aesthetic
+      and used neutral Tailwind colours (gray-*) instead of
+      the warm brown palette of the crafts pages.
+    • It missed the subtle border-bottom on the header nav
+      on first attempt — corrected in prompt 2 review.
+    • Avatar placeholder logic (initials + bg colour) was
+      added manually after the AI returned empty <img> tags
+      pointing to non-existent files.
+    • Overall the structural scaffolding was accurate and
+      saved significant time; colour tuning and image
+      handling required manual correction.
+  ═══════════════════════════════════════════════════════════
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.css" />
+    <title>Contestants — Cooking Contest 2024 Edition</title>
+  </head>
+  <body class="bg-white font-sans text-gray-900">
+
+    <!-- ── Header / nav ───────────────────────────────────────── -->
+    <header class="border-b border-gray-200">
+      <div class="max-w-5xl mx-auto px-6 flex items-center justify-between h-14">
+        <span class="font-semibold text-sm text-gray-900 tracking-tight">
+          Cooking contest 2024 edition
+        </span>
+
+        <!-- Mobile burger (static) -->
+        <button
+          class="sm:hidden p-1.5 text-gray-500 hover:text-gray-900 transition-colors"
+          aria-label="Open navigation menu"
+        >
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <!-- Desktop nav -->
+        <nav class="hidden sm:flex items-center gap-0.5">
+          <a href="./index.html"
+             class="px-3 py-1.5 text-sm text-gray-600 hover:text-gray-900 rounded transition-colors">
+            Home
+          </a>
+          <a href="#"
+             class="px-3 py-1.5 text-sm text-gray-600 hover:text-gray-900 rounded transition-colors">
+            The contest
+          </a>
+          <a href="#"
+             class="px-3 py-1.5 text-sm text-gray-600 hover:text-gray-900 rounded transition-colors">
+            Recipes
+          </a>
+          <a href="./contestants.html"
+             class="ml-1 px-4 py-1.5 text-sm font-medium bg-gray-900 text-white rounded-md hover:bg-gray-700 transition-colors">
+            Contestants
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ── Page hero ─────────────────────────────────────────── -->
+      <section class="py-20 sm:py-28 text-center">
+        <div class="max-w-xl mx-auto px-6">
+          <h1 class="text-5xl sm:text-6xl font-bold text-gray-900 tracking-tight mb-4">
+            Contestants
+          </h1>
+          <p class="text-gray-400 text-base">
+            This section describes the recipes of the best contestants
+          </p>
+        </div>
+      </section>
+
+      <!-- ── Banner image ──────────────────────────────────────── -->
+      <div class="max-w-5xl mx-auto px-6 mb-16">
+        <img
+          src="https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=1200&auto=format&fit=crop&q=80"
+          alt="Contestants sharing dishes at a table"
+          class="w-full h-72 sm:h-96 object-cover rounded-xl"
+          width="1200"
+          height="600"
+        />
+      </div>
+
+      <!-- ── Recipe cards (component) ──────────────────────────── -->
+      <include src="./views/recipe-cards.html"></include>
+
+    </main>
+
+    <!-- ── Footer ────────────────────────────────────────────── -->
+    <footer class="border-t border-gray-200 mt-16">
+      <div class="max-w-5xl mx-auto px-6 py-12">
+        <div class="flex flex-wrap items-start justify-between gap-8">
+
+          <!-- Brand + social -->
+          <div class="min-w-[180px]">
+            <p class="font-semibold text-sm text-gray-900 mb-5">
+              Cooking contest 2024 edition
+            </p>
+            <div class="flex items-center gap-3">
+              <a href="#" aria-label="Facebook"  class="text-gray-400 hover:text-gray-700 transition-colors text-base">
+                <i class="fa-brands fa-facebook"  aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="LinkedIn"  class="text-gray-400 hover:text-gray-700 transition-colors text-base">
+                <i class="fa-brands fa-linkedin"  aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="YouTube"   class="text-gray-400 hover:text-gray-700 transition-colors text-base">
+                <i class="fa-brands fa-youtube"   aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-gray-700 transition-colors text-base">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Recipes column -->
+          <div>
+            <h3 class="font-semibold text-sm text-gray-900 mb-3">Recipes</h3>
+            <ul class="space-y-2 list-none m-0 p-0">
+              <li><a href="#" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Cajun seafood pasta</a></li>
+              <li><a href="#" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Cedar planked salmon</a></li>
+              <li><a href="#" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Poulet au vinaigre</a></li>
+            </ul>
+          </div>
+
+          <!-- Contestants column -->
+          <div>
+            <h3 class="font-semibold text-sm text-gray-900 mb-3">Contestants</h3>
+            <ul class="space-y-2 list-none m-0 p-0">
+              <li><a href="#" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">John Cooper</a></li>
+              <li><a href="#" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Marta Alonso</a></li>
+              <li><a href="#" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Mary Ann Stones</a></li>
+            </ul>
+          </div>
+
+          <!-- Contest editions column -->
+          <div>
+            <h3 class="font-semibold text-sm text-gray-900 mb-3">Contest editions</h3>
+            <ul class="space-y-2 list-none m-0 p-0">
+              <li><a href="#" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">2024</a></li>
+              <li><a href="#" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">2023</a></li>
+              <li><a href="#" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">2022</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./assets/scripts/main.js"></script>
+  </body>
+</html>

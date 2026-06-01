@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-light text-dark font-sans;
+  }
+}
+
+@layer components {
+
+  .btn-primary {
+    @apply inline-block bg-primary text-white font-semibold
+           px-6 py-3 rounded-md transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+  .btn-primary:hover {
+    @apply bg-secondary;
+  }
+
+  .badge-category {
+    @apply inline-block text-xs font-bold uppercase tracking-wider
+           px-3 py-1 rounded-full;
+  }
+
+  .card-base {
+    @apply bg-white rounded-lg shadow-md overflow-hidden
+           transition-all duration-200;
+  }
+  .card-base:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+
+}
