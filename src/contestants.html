@@ -1,45 +1,4 @@
 <!doctype html>
-
-<!--
-  ═══════════════════════════════════════════════════════════
-  contestants.html — Cooking Contest 2024 Edition
-  ─────────────────────────────────────────────────────────
-  GENERATED WITH AI — GitHub Copilot (Claude Sonnet 4.6)
-  Based on the design reference image provided for PEC3.
-
-  Prompt sequence used:
-    1. "Based on this design image, generate the full HTML
-       and Tailwind CSS for the Contestants page of a
-       cooking contest website. Use Tailwind v3 utility
-       classes only, no custom CSS. Match the layout,
-       typography scale, and colour palette visible in
-       the image."
-    2. "Add the recipe cards section using a 3-column grid.
-       Each card has a title, a circular avatar with initials,
-       author name, and short description."
-    3. "Add a multi-column footer that matches the image:
-       brand name top-left, social icons bottom-left,
-       and three link columns (Recipes / Contestants /
-       Contest editions)."
-    4. "Integrate the recipe cards as a posthtml-include
-       component (src/views/recipe-cards.html) and use
-       the shared main.css stylesheet."
-
-  AI analysis:
-    • The AI correctly identified the minimal, clean aesthetic
-      and used neutral Tailwind colours (gray-*) instead of
-      the warm brown palette of the crafts pages.
-    • It missed the subtle border-bottom on the header nav
-      on first attempt — corrected in prompt 2 review.
-    • Avatar placeholder logic (initials + bg colour) was
-      added manually after the AI returned empty <img> tags
-      pointing to non-existent files.
-    • Overall the structural scaffolding was accurate and
-      saved significant time; colour tuning and image
-      handling required manual correction.
-  ═══════════════════════════════════════════════════════════
--->
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
